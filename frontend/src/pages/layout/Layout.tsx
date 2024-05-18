@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import { Dialog, Stack, TextField } from '@fluentui/react'
-import { CopyRegular } from '@fluentui/react-icons'
+import { CopyRegular, PaddingDown20Regular } from '@fluentui/react-icons'
 
 import { CosmosDBStatus } from '../../api'
-import Contoso from '../../assets/Contoso.svg'
+import Contoso from '../../assets/Contoso.png'
 import { HistoryButton, ShareButton } from '../../components/common/Button'
 import { AppStateContext } from '../../state/AppProvider'
 
@@ -76,7 +76,7 @@ const Layout = () => {
               <h1 className={styles.headerTitle}>{ui?.title}</h1>
             </Link>
           </Stack>
-          <Stack horizontal tokens={{ childrenGap: 4 }} className={styles.shareButtonContainer}>
+          {/* <Stack horizontal tokens={{ childrenGap: 4 }} className={styles.shareButtonContainer}>
             {appStateContext?.state.isCosmosDBAvailable?.status !== CosmosDBStatus.NotConfigured && (
               <HistoryButton
                 onClick={handleHistoryClick}
@@ -84,11 +84,11 @@ const Layout = () => {
               />
             )}
             {ui?.show_share_button && <ShareButton onClick={handleShareClick} text={shareLabel} />}
-          </Stack>
+          </Stack> */}
         </Stack>
       </header>
       <Outlet />
-      <Dialog
+      {/* <Dialog
         onDismiss={handleSharePanelDismiss}
         hidden={!isSharePanelOpen}
         styles={{
@@ -124,7 +124,7 @@ const Layout = () => {
             <span className={styles.copyButtonText}>{copyText}</span>
           </div>
         </Stack>
-      </Dialog>
+      </Dialog> */}
     </div>
   )
 }
